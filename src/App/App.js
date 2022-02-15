@@ -1,5 +1,9 @@
+import { Meme } from "../Meme/Meme";
+
 const App = () => {
-  return <div className="App"></div>;
+  return (
+    <Meme />
+  );
 };
 
 export default App;
