@@ -4,6 +4,16 @@ import styles from './styles.module.css';
 export const Meme = () => {
   const [memes, setMemes] = useState([]);
   const [memeIndex, setMemeIndex] = useState(0);
+  const [captions, setCaptions] = useState([]);
+
+  const updateCaption = (e, index) => {
+    const text = e.target.value || '';
+    if (index === 1) {
+
+    } else {
+
+    }
+  }
 
   const shuffleMemes = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -22,6 +32,13 @@ export const Meme = () => {
       })
     );
   }, []);
+
+  useEffect(() => {
+    if (memes.length) {
+      setCaptions(Array(memes[memeIndex].box_count).fill(''));
+    }
+  }, [memeIndex, memes]);
+
   return memes.length ? (
     <div className={styles.container}>
       <button onClick={() => console.log(0)} className={styles.generate}>
@@ -33,6 +50,10 @@ export const Meme = () => {
       >
         Skip
       </button>
+      {
+        captions.map((c, index) => (
+          <input onChange={(e) => updateCaption(e, index)} key = {index} />        ))
+      }
       <img src={memes[memeIndex].url} alt="" />
     </div>
   ) : (
