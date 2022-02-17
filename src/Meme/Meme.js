@@ -16,7 +16,7 @@ export const Meme = () => {
           return c;
         }
       })
-    )
+    );
   };
 
   const shuffleMemes = (array) => {
@@ -42,7 +42,7 @@ export const Meme = () => {
       setCaptions(Array(memes[memeIndex].box_count).fill(''));
     }
   }, [memeIndex, memes]);
-
+ 
   return memes.length ? (
     <div className={styles.container}>
       <button onClick={() => console.log(0)} className={styles.generate}>
