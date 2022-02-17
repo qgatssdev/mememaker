@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export const Meme = () => {
   const [memes, setMemes] = useState([]);
@@ -18,6 +19,8 @@ export const Meme = () => {
       })
     );
   };
+
+  const navigate = useNavigate();
 
   const generateMeme = () => {
     const currentMeme = memes[memeIndex];
@@ -52,7 +55,6 @@ export const Meme = () => {
       })
     );
   }, []);
-
 
   useEffect(() => {
     if (memes.length) {
