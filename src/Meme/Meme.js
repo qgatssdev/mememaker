@@ -53,6 +53,7 @@ export const Meme = () => {
     );
   }, []);
 
+
   useEffect(() => {
     if (memes.length) {
       setCaptions(Array(memes[memeIndex].box_count).fill(''));
