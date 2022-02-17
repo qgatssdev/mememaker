@@ -19,6 +19,22 @@ export const Meme = () => {
     );
   };
 
+  const generateMeme = () => {
+    const currentMeme = memes[memeIndex];
+    const formData = new FormData();
+
+    formData.append('username', 'UcheOmodu');
+    formData.append('password', 'narutoomodu');
+    formData.append('template_id', currentMeme.id);
+    captions.forEach((c, index) => formData.append(`boxes[${index}[text]]`, c));
+    fetch('https://api.imgflip.com/caption_image', {
+      method: 'POST',
+      body: formData,
+    }).then((res) => {
+      res.json().then((res) => console.log(res));
+    });
+  };
+
   const shuffleMemes = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * i);
@@ -42,10 +58,10 @@ export const Meme = () => {
       setCaptions(Array(memes[memeIndex].box_count).fill(''));
     }
   }, [memeIndex, memes]);
- 
+
   return memes.length ? (
     <div className={styles.container}>
-      <button onClick={() => console.log(0)} className={styles.generate}>
+      <button onClick={generateMeme} className={styles.generate}>
         Generate
       </button>
       <button
