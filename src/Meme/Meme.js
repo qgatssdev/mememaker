@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { useNavigate } from 'react-router-dom';
 
-
+//
 
 export const Meme = () => {
   const [memes, setMemes] = useState([]);
