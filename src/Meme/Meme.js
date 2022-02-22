@@ -21,7 +21,7 @@ export const Meme = () => {
     );
   };
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const generateMeme = () => {
     const currentMeme = memes[memeIndex];
