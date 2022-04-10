@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MemeGenerated = () => {
-  // const [memes, setMemes] = useState([]);z
+  // const [memes, setMemes] = useState([]);q
   return (
     <div>
       <h1>Hi</h1>
