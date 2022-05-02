@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { useNavigate } from 'react-router-dom';
 
-// Component: Memecards jkas a meme card
+// Component: Memecards 
 export const Meme = () => {
   const [memes, setMemes] = useState([]);
   const [memeIndex, setMemeIndex] = useState(0);
